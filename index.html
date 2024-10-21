@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Adivinanza de un Número</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 50%; 
+            max-width: 600px; 
+            margin: auto; 
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        p {
+
+            margin-bottom: 15px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 1.1em;
+            border: 2px solid #dfe6e9;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            transition: border 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #357ab7;
+        }
+
+        #mensaje {
+            margin-top: 20px;
+            font-size: 1.3em;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .correcto {
+            color: #28a745;
+            background-color: #e6ffe6;
+        }
+
+        .alto {
+            color: #dc3545;
+            background-color: #ffe6e6;
+        }
+
+        .bajo {
+            color: #ff9f43;
+            background-color: #fff3e6;
+        }
+    </style>
+        
+    
+</head>
+<body>
+    <h1>Adivina el Número Secreto</h1>
+    <p>Introduce un número entre 1 y 100:</p>
+    <input type="number" id="numero" min="1" max="100">
+    <button id="comprobar">Comprobar</button>
+    <div id="mensaje"></div>
+    <div id="intentos"></div>
+
+    <script>
+        let random = Math.floor(Math.random() * 100);
+let intentos = 0;
+let numero = document.getElementById('numero');
+let botoncomprobar = document.getElementById('comprobar');
+let mensaje = document.getElementById('mensaje');
+let intentosdiv = document.getElementById('intentos');
+
+botoncomprobar.addEventListener('click', () => {
+    let numerousuario = parseInt(numero.value);
+    if (numerousuario === random){
+        intentos++;
+        mensaje.textContent = "Enhorabuena has acertado";
+        mensaje.className = "correcto";
+
+    } else if (numerousuario > random){
+            intentos++;
+            mensaje.textContent = 'El número es demasiado alto.';
+            mensaje.className = "alto";
+
+        } else {
+            intentos++;
+            mensaje.textContent = 'El número es demasiado bajo.';
+            mensaje.className = "bajo";
+    
+        }
+    
+    intentosdiv.textContent = `Numero de intentos: ${intentos}`;
+
+});
+
+    </script>
+</body>
+</html>
