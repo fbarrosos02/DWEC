@@ -1,0 +1,166 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    font-family: Helvetica, Arial, sans-serif;
+}
+/* entrada de texto */
+
+#entrada {
+    display: flex;
+}
+
+#entrada button {
+    width: 110px;
+    height: 35px;
+    margin: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+#entrada input {
+    width: 600px;
+    height: 30px;
+    margin: 10px;
+}
+/* Modos */
+
+#modos {
+    display: flex;
+    gap: 10px;
+}
+
+#modos>button {
+    border-radius: 5px;
+    width: 80px;
+    margin: 8px 0px;
+    height: 20px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+/* Tareas */
+
+#tareas {
+    display: flex;
+}
+
+#tareas> div {
+    margin-top: 20px;
+}
+/*Dropzone y draggable */
+
+.dropzone {
+    width: 300px;
+    min-height: 300px;
+    text-align: center;
+    padding: 10px;
+    background-color: #007BFF;
+    border-radius: 6px;
+    margin: 8px;
+    font-size: 20px;
+}
+
+.draggable {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    word-break: break-all;
+}
+
+.draggable button {
+    margin-left: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.114);
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 13px;
+}
+/* Pastel */
+
+#pastel {
+    background-color: #f9e9bf;
+    color: #50382f;
+}
+
+.pastel {
+    background-color: #F9E9BF;
+    color: #50382f;
+}
+
+#entrada.pastel button {
+    background-color: #FFE5C1;
+    color: #50382f;
+}
+
+.pastel .dropzone {
+    background-color: #FFF8E7;
+    color: #50382f;
+}
+
+.pastel .draggable {
+    background-color: #FFEED9;
+    color: #50382f;
+    border: 1px solid #D3C4A6;
+}
+
+.pastel .draggable button {
+    background-color: #FFF3E0;
+    color: #50382f;
+    border: 1px solid #D3C4A6;
+}
+
+#modos.pastel>button {
+    background-color: #FFD8A9;
+    color: #50382f;
+}
+
+#modos.pastel>button:hover {
+    background-color: #FFC78E;
+}
+
+.pastel .draggable button:hover {
+    background-color: #FFE5C1;
+    color: #6F4C3A;
+}
+/* Oscuro */
+
+#oscuro {
+    background-color: #3a3a3a;
+    color: #FFFFFF;
+}
+
+.oscuro {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+#entrada.oscuro button {
+    background-color: #333333;
+    color: #e0e0e0;
+}
+
+.oscuro .dropzone {
+    background-color: #292929;
+    color: #e0e0e0;
+}
+
+.oscuro .draggable {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    border: 1px solid #505050;
+}
+
+.oscuro .draggable button {
+    background-color: #444444;
+    color: #e0e0e0;
+    border: 1px solid #505050;
+}
+
+#modos.oscuro>button {
+    background-color: #555555;
+    color: #e0e0e0;
+}
